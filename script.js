@@ -4,6 +4,67 @@ const currency = new Intl.NumberFormat("en-US", {
   style: "currency",
 });
 
+const bootLines = [
+  "Loaded ccType..................... 21%",
+  "Loaded keyboardInput.............. 38%",
+  "Loaded deskTexture................ 52%",
+  "Loaded monitorSmudge.............. 66%",
+  "Loaded carCalculator.............. 74%",
+  "Loaded recipeArchive.............. 82%",
+  "Loaded garageIndex................ 91%",
+  "Loaded desktopScene............... 100%",
+];
+
+const bootScreen = document.querySelector("#boot-screen");
+const bootOutput = document.querySelector("#boot-lines");
+const bootReady = document.querySelector(".boot-ready");
+const startButton = document.querySelector("#start-button");
+const room = document.querySelector("#room");
+const clock = document.querySelector("#clock");
+
+function runBoot() {
+  bootLines.forEach((line, index) => {
+    window.setTimeout(() => {
+      const p = document.createElement("p");
+      p.textContent = line;
+      bootOutput.append(p);
+    }, 260 * (index + 1));
+  });
+
+  window.setTimeout(() => {
+    bootReady.classList.add("visible");
+    startButton.classList.add("visible");
+  }, 260 * (bootLines.length + 2));
+}
+
+function launchRoom() {
+  bootScreen.classList.add("hidden");
+  room.classList.add("live");
+}
+
+function updateClock() {
+  const now = new Date();
+  clock.textContent = now.toLocaleTimeString([], {
+    hour: "2-digit",
+    minute: "2-digit",
+    second: "2-digit",
+  });
+}
+
+function activatePanel(panelId) {
+  document.querySelectorAll(".screen-panel").forEach((panel) => {
+    panel.classList.toggle("active", panel.id === panelId);
+  });
+
+  document.querySelectorAll(".tab-button").forEach((button) => {
+    button.classList.toggle("active", button.dataset.panel === panelId);
+  });
+}
+
+document.querySelectorAll("[data-panel]").forEach((control) => {
+  control.addEventListener("click", () => activatePanel(control.dataset.panel));
+});
+
 const fields = {
   apr: document.querySelector("#apr"),
   discount: document.querySelector("#discount"),
@@ -70,4 +131,8 @@ Object.values(fields).forEach((field) => {
   field.addEventListener("input", calculate);
 });
 
+startButton.addEventListener("click", launchRoom);
+window.setInterval(updateClock, 1000);
+updateClock();
+runBoot();
 calculate();
