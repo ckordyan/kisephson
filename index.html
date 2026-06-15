@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Kisephson's personal dashboard for favorite links, tools, recipes, and car deal math."
+    />
+    <title>Kisephson</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="site-shell">
+      <header class="topbar" aria-label="Primary">
+        <a class="brand" href="#home" aria-label="Kisephson home">
+          <span class="brand-mark">K</span>
+          <span>Kisephson</span>
+        </a>
+        <nav class="nav-links">
+          <a href="#links">Links</a>
+          <a href="#tools">Tools</a>
+          <a href="#recipes">Recipes</a>
+          <a href="#garage">Garage</a>
+        </nav>
+      </header>
+
+      <main>
+        <section class="hero" id="home">
+          <img
+            class="hero-image"
+            src="./assets/kisephson-glass-wallpaper.png"
+            alt=""
+            aria-hidden="true"
+          />
+          <div class="hero-overlay"></div>
+          <div class="hero-content">
+            <p class="eyebrow">Personal command center</p>
+            <h1>Kisephson</h1>
+            <p class="hero-copy">
+              One clean place for the sites, calculators, recipes, car research,
+              and everyday shortcuts I actually use.
+            </p>
+            <div class="hero-actions">
+              <a class="button primary" href="#tools">Open tools</a>
+              <a class="button secondary" href="#links">Jump to links</a>
+            </div>
+          </div>
+        </section>
+
+        <section class="overview-strip" aria-label="Dashboard highlights">
+          <article>
+            <span class="stat">04</span>
+            <span>starter collections</span>
+          </article>
+          <article>
+            <span class="stat">01</span>
+            <span>live calculator</span>
+          </article>
+          <article>
+            <span class="stat">GitHub</span>
+            <span>Pages-ready</span>
+          </article>
+        </section>
+
+        <section class="section" id="links">
+          <div class="section-heading">
+            <p class="eyebrow">Daily launchpad</p>
+            <h2>Favorite Websites</h2>
+          </div>
+          <div class="link-grid">
+            <a class="link-card" href="https://www.autotrader.com/" target="_blank" rel="noreferrer">
+              <span class="link-icon">A</span>
+              <span>
+                <strong>AutoTrader</strong>
+                <small>Car searches and market checks</small>
+              </span>
+            </a>
+            <a class="link-card" href="https://www.cargurus.com/" target="_blank" rel="noreferrer">
+              <span class="link-icon">C</span>
+              <span>
+                <strong>CarGurus</strong>
+                <small>Deal ratings and listings</small>
+              </span>
+            </a>
+            <a class="link-card" href="https://www.youtube.com/" target="_blank" rel="noreferrer">
+              <span class="link-icon">Y</span>
+              <span>
+                <strong>YouTube</strong>
+                <small>Reviews, repairs, and walkthroughs</small>
+              </span>
+            </a>
+            <a class="link-card" href="https://www.reddit.com/" target="_blank" rel="noreferrer">
+              <span class="link-icon">R</span>
+              <span>
+                <strong>Reddit</strong>
+                <small>Research threads and niche advice</small>
+              </span>
+            </a>
+          </div>
+        </section>
+
+        <section class="section split-section" id="tools">
+          <div class="section-heading">
+            <p class="eyebrow">First custom tool</p>
+            <h2>Car Deal Calculator</h2>
+          </div>
+
+          <div class="calculator">
+            <form class="calc-panel" id="car-form">
+              <label>
+                Vehicle price
+                <input id="price" type="number" min="0" value="35000" />
+              </label>
+              <label>
+                Discount / negotiation
+                <input id="discount" type="number" min="0" value="2500" />
+              </label>
+              <label>
+                Trade-in value
+                <input id="trade" type="number" min="0" value="5000" />
+              </label>
+              <label>
+                Down payment
+                <input id="down" type="number" min="0" value="3000" />
+              </label>
+              <label>
+                Tax rate
+                <div class="input-suffix">
+                  <input id="tax" type="number" min="0" step="0.01" value="6.625" />
+                  <span>%</span>
+                </div>
+              </label>
+              <label>
+                Fees
+                <input id="fees" type="number" min="0" value="899" />
+              </label>
+              <label>
+                APR
+                <div class="input-suffix">
+                  <input id="apr" type="number" min="0" step="0.01" value="6.49" />
+                  <span>%</span>
+                </div>
+              </label>
+              <label>
+                Loan term
+                <div class="input-suffix">
+                  <input id="term" type="number" min="1" value="60" />
+                  <span>mo</span>
+                </div>
+              </label>
+            </form>
+
+            <aside class="result-panel" aria-live="polite">
+              <p class="eyebrow">Estimated outcome</p>
+              <div class="monthly" id="monthly">$0</div>
+              <p class="result-label">monthly payment</p>
+              <div class="deal-meter">
+                <div id="deal-meter-fill"></div>
+              </div>
+              <p class="deal-copy" id="deal-copy">Enter your numbers to score the deal.</p>
+              <dl class="breakdown">
+                <div>
+                  <dt>Out-the-door</dt>
+                  <dd id="otd">$0</dd>
+                </div>
+                <div>
+                  <dt>Amount financed</dt>
+                  <dd id="financed">$0</dd>
+                </div>
+                <div>
+                  <dt>Total interest</dt>
+                  <dd id="interest">$0</dd>
+                </div>
+                <div>
+                  <dt>Discount score</dt>
+                  <dd id="score">0%</dd>
+                </div>
+              </dl>
+            </aside>
+          </div>
+        </section>
+
+        <section class="section collection-grid" id="recipes">
+          <div class="section-heading">
+            <p class="eyebrow">Save for later</p>
+            <h2>Collections</h2>
+          </div>
+          <article class="collection-card">
+            <span>Recipes</span>
+            <strong>Fast dinners, favorite sauces, meal prep ideas.</strong>
+          </article>
+          <article class="collection-card">
+            <span>Notes</span>
+            <strong>Little things worth remembering without hunting.</strong>
+          </article>
+          <article class="collection-card" id="garage">
+            <span>Garage</span>
+            <strong>Cars to compare, mods, maintenance, and dream builds.</strong>
+          </article>
+        </section>
+      </main>
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
