@@ -21,6 +21,7 @@ const bootReady = document.querySelector(".boot-ready");
 const startButton = document.querySelector("#start-button");
 const room = document.querySelector("#room");
 const clock = document.querySelector("#clock");
+const date = document.querySelector("#date");
 
 function runBoot() {
   bootLines.forEach((line, index) => {
@@ -49,15 +50,18 @@ function updateClock() {
     minute: "2-digit",
     second: "2-digit",
   });
+  date.textContent = now
+    .toLocaleDateString([], {
+      day: "2-digit",
+      month: "short",
+      year: "numeric",
+    })
+    .toUpperCase();
 }
 
 function activatePanel(panelId) {
   document.querySelectorAll(".screen-panel").forEach((panel) => {
     panel.classList.toggle("active", panel.id === panelId);
-  });
-
-  document.querySelectorAll(".tab-button").forEach((button) => {
-    button.classList.toggle("active", button.dataset.panel === panelId);
   });
 }
 

@@ -31,12 +31,6 @@
     </div>
 
     <main class="room" id="room" aria-label="Kisephson OS desktop scene">
-      <div class="hud">
-        <div>Kisephson</div>
-        <div>Personal OS</div>
-        <div id="clock">00:00:00</div>
-      </div>
-
       <section class="desk-scene">
         <div class="wall-light" aria-hidden="true"></div>
 
@@ -46,6 +40,7 @@
               <div class="screen">
                 <div class="window-bar">
                   <span>KISEPHSON_OS.EXE</span>
+                  <button class="home-button" type="button" data-panel="home-panel" aria-label="Return home">home</button>
                   <div class="window-controls" aria-hidden="true">
                     <i></i>
                     <i></i>
@@ -54,32 +49,14 @@
                 </div>
 
                 <div class="screen-content">
-                  <nav class="screen-tabs" aria-label="Computer sections">
-                    <button class="tab-button active" type="button" data-panel="home-panel">Home</button>
-                    <button class="tab-button" type="button" data-panel="links-panel">Links</button>
-                    <button class="tab-button" type="button" data-panel="tools-panel">Tools</button>
-                    <button class="tab-button" type="button" data-panel="vault-panel">Vault</button>
-                  </nav>
-
                   <section class="screen-panel active" id="home-panel">
-                    <p class="eyebrow">System ready</p>
-                    <h1>Kisephson OS</h1>
-                    <p class="intro">
-                      A personal command center disguised as an old computer.
-                      Links, tools, recipes, car research, and whatever else earns a spot.
-                    </p>
-                    <div class="module-grid">
-                      <button class="module-card" type="button" data-panel="links-panel">
-                        <span>01</span>
-                        <strong>Launchpad</strong>
-                      </button>
+                    <h1>Kisephson</h1>
+                    <div class="home-actions">
                       <button class="module-card" type="button" data-panel="tools-panel">
-                        <span>02</span>
-                        <strong>Car math</strong>
+                        Tools
                       </button>
-                      <button class="module-card" type="button" data-panel="vault-panel">
-                        <span>03</span>
-                        <strong>Collections</strong>
+                      <button class="module-card" type="button" data-panel="links-panel">
+                        Links
                       </button>
                     </div>
                   </section>
@@ -210,6 +187,10 @@
               </div>
             </div>
             <div class="monitor-badge">KISEPHSON</div>
+            <div class="monitor-clock" aria-label="Current time">
+              <span id="clock">00:00:00</span>
+              <small id="date">JAN 01 2000</small>
+            </div>
           </div>
           <div class="monitor-neck"></div>
           <div class="monitor-base"></div>
