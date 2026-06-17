@@ -182,6 +182,200 @@ input {
     inset 0 0 42px rgba(19, 74, 68, 0.24),
     0 0 18px rgba(216, 255, 245, 0.36);
   overflow: hidden;
+  position: relative;
+}
+
+.system-menu {
+  align-items: center;
+  background: rgba(248, 247, 239, 0.92);
+  border-bottom: 1px solid rgba(16, 32, 31, 0.22);
+  color: #10201f;
+  display: flex;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.64rem;
+  font-weight: 700;
+  height: 22px;
+  inset: 0 0 auto;
+  padding: 0 8px;
+  position: absolute;
+  z-index: 5;
+}
+
+.menu-k {
+  align-items: center;
+  background: #10201f;
+  border-radius: 3px;
+  color: var(--green);
+  display: inline-flex;
+  height: 14px;
+  justify-content: center;
+  margin-right: 8px;
+  width: 14px;
+}
+
+.menu-clock {
+  margin-left: auto;
+}
+
+.computer-desktop,
+.app-window {
+  inset: 22px 0 0;
+  position: absolute;
+}
+
+.computer-desktop {
+  align-content: start;
+  background:
+    radial-gradient(circle at 50% 34%, rgba(255, 255, 255, 0.32), transparent 16rem),
+    linear-gradient(rgba(255, 255, 255, 0.07) 50%, rgba(0, 0, 0, 0.04) 50%),
+    radial-gradient(circle at 50% 46%, #ecfff8, var(--screen) 38%, #afded6 100%);
+  background-size: 100% 100%, 100% 4px, 100% 100%;
+  display: grid;
+  justify-items: start;
+  padding: 18px 18px 70px;
+  z-index: 1;
+}
+
+.app-window {
+  background:
+    linear-gradient(rgba(255, 255, 255, 0.07) 50%, rgba(0, 0, 0, 0.04) 50%),
+    radial-gradient(circle at 50% 46%, #ecfff8, var(--screen) 38%, #afded6 100%);
+  background-size: 100% 4px, 100% 100%;
+  opacity: 1;
+  transform: scale(1);
+  transform-origin: 22px 54px;
+  transition: opacity 160ms ease, transform 160ms ease, visibility 160ms ease;
+  visibility: visible;
+  z-index: 2;
+}
+
+.app-window.closed {
+  opacity: 0;
+  pointer-events: none;
+  transform: scale(0.92);
+  visibility: hidden;
+}
+
+.desktop-dock {
+  align-items: end;
+  background: rgba(248, 247, 239, 0.72);
+  border: 1px solid rgba(16, 32, 31, 0.22);
+  border-radius: 8px 8px 0 0;
+  bottom: 0;
+  box-shadow: 0 -5px 18px rgba(16, 32, 31, 0.14);
+  display: flex;
+  gap: 12px;
+  left: 50%;
+  padding: 8px 12px 6px;
+  position: absolute;
+  transform: translateX(-50%);
+  z-index: 2;
+}
+
+.dock-icon {
+  align-items: center;
+  background: transparent;
+  border: 0;
+  color: #10201f;
+  cursor: default;
+  display: grid;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.52rem;
+  font-weight: 700;
+  gap: 4px;
+  justify-items: center;
+  padding: 0;
+  width: 44px;
+}
+
+.kisephson-icon {
+  cursor: pointer;
+}
+
+.kisephson-icon > span {
+  background: linear-gradient(180deg, #f9f7ee, #cfc9b9);
+  color: #10201f;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 1rem;
+  font-weight: 900;
+}
+
+.kisephson-icon:hover > span,
+.kisephson-icon:focus-visible > span {
+  box-shadow: 0 0 0 2px rgba(18, 63, 115, 0.32), 0 3px 0 rgba(16, 32, 31, 0.14);
+}
+
+.dock-icon > span {
+  align-items: center;
+  border: 1px solid rgba(16, 32, 31, 0.28);
+  border-radius: 8px;
+  box-shadow: 0 3px 0 rgba(16, 32, 31, 0.14);
+  display: inline-flex;
+  height: 30px;
+  justify-content: center;
+  position: relative;
+  width: 30px;
+}
+
+.finder-icon > span {
+  background: linear-gradient(90deg, #84c9ff 0 50%, #f1f4f0 50% 100%);
+}
+
+.finder-icon > span::before,
+.finder-icon > span::after {
+  background: #10201f;
+  border-radius: 50%;
+  content: "";
+  height: 3px;
+  position: absolute;
+  top: 9px;
+  width: 3px;
+}
+
+.finder-icon > span::before {
+  left: 8px;
+}
+
+.finder-icon > span::after {
+  right: 8px;
+}
+
+.terminal-icon > span {
+  background: #10201f;
+  color: var(--green);
+  font-size: 1rem;
+  line-height: 1;
+}
+
+.terminal-icon > span::before {
+  color: var(--green);
+  content: ">";
+  font-size: 0.8rem;
+  left: 7px;
+  position: absolute;
+  top: 5px;
+}
+
+.terminal-icon > span {
+  padding: 0 0 4px 10px;
+}
+
+.trash-icon > span {
+  background:
+    linear-gradient(90deg, transparent 0 28%, rgba(16, 32, 31, 0.2) 29% 31%, transparent 32% 48%, rgba(16, 32, 31, 0.2) 49% 51%, transparent 52% 68%, rgba(16, 32, 31, 0.2) 69% 71%, transparent 72%),
+    linear-gradient(180deg, #f8f7ef, #c8c5ba);
+  border-radius: 5px 5px 8px 8px;
+}
+
+.trash-icon > span::before {
+  background: #a7a399;
+  border: 1px solid rgba(16, 32, 31, 0.3);
+  border-radius: 3px 3px 0 0;
+  content: "";
+  height: 5px;
+  position: absolute;
+  top: -5px;
+  width: 22px;
 }
 
 .window-bar {
@@ -197,7 +391,8 @@ input {
 }
 
 .window-bar > span {
-  margin-right: auto;
+  margin-left: auto;
+  margin-right: 0;
 }
 
 .home-button {
@@ -224,36 +419,42 @@ input {
   gap: 4px;
 }
 
-.window-controls i {
+.window-control {
   align-items: center;
+  appearance: none;
   border: 1px solid rgba(0, 0, 0, 0.24);
   border-radius: 50%;
+  cursor: pointer;
+  flex: 0 0 10px;
   display: inline-flex;
   font-style: normal;
   font-weight: 900;
   height: 10px;
   justify-content: center;
+  min-height: 10px;
+  min-width: 10px;
+  padding: 0;
   position: relative;
   transition: background 140ms ease, border-color 140ms ease, box-shadow 140ms ease, transform 140ms ease;
   width: 10px;
 }
 
-.window-controls i:nth-child(1) {
+.window-control:nth-child(1) {
   background: #ff5f57;
   border-color: #b1443e;
 }
 
-.window-controls i:nth-child(2) {
+.window-control:nth-child(2) {
   background: #ffbd2e;
   border-color: #b17b1b;
 }
 
-.window-controls i:nth-child(3) {
+.window-control:nth-child(3) {
   background: #28c840;
   border-color: #1b8e2c;
 }
 
-.window-controls i::before {
+.window-control::before {
   color: rgba(20, 24, 26, 0.72);
   font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   font-size: 7px;
@@ -266,27 +467,27 @@ input {
   transition: opacity 120ms ease;
 }
 
-.window-controls i:nth-child(1)::before {
+.window-control:nth-child(1)::before {
   content: "x";
 }
 
-.window-controls i:nth-child(2)::before {
+.window-control:nth-child(2)::before {
   content: "-";
   font-size: 9px;
   top: 42%;
 }
 
-.window-controls i:nth-child(3)::before {
+.window-control:nth-child(3)::before {
   content: "+";
 }
 
-.window-bar:hover .window-controls i,
-.window-bar:focus-within .window-controls i {
+.window-bar:hover .window-control,
+.window-bar:focus-within .window-control {
   transform: scale(1.08);
 }
 
-.window-bar:hover .window-controls i::before,
-.window-bar:focus-within .window-controls i::before {
+.window-bar:hover .window-control::before,
+.window-bar:focus-within .window-control::before {
   opacity: 1;
 }
 

@@ -22,6 +22,10 @@ const startButton = document.querySelector("#start-button");
 const room = document.querySelector("#room");
 const clock = document.querySelector("#clock");
 const date = document.querySelector("#date");
+const menuClock = document.querySelector("#menu-clock");
+const appWindow = document.querySelector("#app-window");
+const closeControl = document.querySelector(".close-control");
+const launchKos = document.querySelector("#launch-kos");
 
 function runBoot() {
   bootLines.forEach((line, index) => {
@@ -57,12 +61,26 @@ function updateClock() {
       year: "numeric",
     })
     .toUpperCase();
+  menuClock.textContent = now.toLocaleTimeString([], {
+    hour: "2-digit",
+    minute: "2-digit",
+  });
 }
 
 function activatePanel(panelId) {
   document.querySelectorAll(".screen-panel").forEach((panel) => {
     panel.classList.toggle("active", panel.id === panelId);
   });
+}
+
+function closeApp() {
+  activatePanel("home-panel");
+  appWindow.classList.add("closed");
+}
+
+function openApp() {
+  appWindow.classList.remove("closed");
+  activatePanel("home-panel");
 }
 
 document.querySelectorAll("[data-panel]").forEach((control) => {
@@ -136,6 +154,8 @@ Object.values(fields).forEach((field) => {
 });
 
 startButton.addEventListener("click", launchRoom);
+closeControl.addEventListener("click", closeApp);
+launchKos.addEventListener("click", openApp);
 window.setInterval(updateClock, 1000);
 updateClock();
 runBoot();

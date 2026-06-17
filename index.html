@@ -38,151 +38,179 @@
           <div class="monitor-shell">
             <div class="screen-bezel">
               <div class="screen">
-                <div class="window-bar">
-                  <span>KISEPHSON_OS.EXE</span>
-                  <button class="home-button" type="button" data-panel="home-panel" aria-label="Return home">home</button>
-                  <div class="window-controls" aria-hidden="true">
-                    <i></i>
-                    <i></i>
-                    <i></i>
+                <div class="system-menu" aria-label="Computer menu bar">
+                  <span class="menu-k">K</span>
+                  <span class="menu-clock" id="menu-clock">00:00</span>
+                </div>
+
+                <div class="computer-desktop" aria-label="Computer desktop">
+                  <div class="desktop-dock" aria-label="Desktop dock">
+                    <button class="dock-icon finder-icon" type="button" aria-label="Finder">
+                      <span></span>
+                      <small>Finder</small>
+                    </button>
+                    <button class="dock-icon kisephson-icon" id="launch-kos" type="button" aria-label="Open Kisephson">
+                      <span>K</span>
+                      <small>Kisephson</small>
+                    </button>
+                    <button class="dock-icon terminal-icon" type="button" aria-label="Terminal">
+                      <span>_</span>
+                      <small>Terminal</small>
+                    </button>
+                    <button class="dock-icon trash-icon" type="button" aria-label="Trash">
+                      <span></span>
+                      <small>Trash</small>
+                    </button>
                   </div>
                 </div>
 
-                <div class="screen-content">
-                  <section class="screen-panel active" id="home-panel">
-                    <h1>Kisephson</h1>
-                    <div class="home-actions">
-                      <button class="module-card" type="button" data-panel="tools-panel">
-                        Tools
-                      </button>
-                      <button class="module-card" type="button" data-panel="links-panel">
-                        Links
-                      </button>
+                <div class="app-window" id="app-window">
+                  <div class="window-bar">
+                    <div class="window-controls">
+                      <button class="window-control close-control" type="button" aria-label="Close Kisephson OS"></button>
+                      <button class="window-control minimize-control" type="button" aria-label="Minimize Kisephson OS"></button>
+                      <button class="window-control maximize-control" type="button" aria-label="Maximize Kisephson OS"></button>
                     </div>
-                  </section>
+                    <button class="home-button" type="button" data-panel="home-panel" aria-label="Return home">home</button>
+                    <span>KISEPHSON_OS.EXE</span>
+                  </div>
 
-                  <section class="screen-panel" id="links-panel">
-                    <p class="eyebrow">Quick access</p>
-                    <h2>Favorite Websites</h2>
-                    <div class="link-grid">
-                      <a href="https://www.autotrader.com/" target="_blank" rel="noreferrer">
-                        <span>A</span>
-                        <strong>AutoTrader</strong>
-                        <small>Car searches and market checks</small>
-                      </a>
-                      <a href="https://www.cargurus.com/" target="_blank" rel="noreferrer">
-                        <span>C</span>
-                        <strong>CarGurus</strong>
-                        <small>Deal ratings and listings</small>
-                      </a>
-                      <a href="https://www.youtube.com/" target="_blank" rel="noreferrer">
-                        <span>Y</span>
-                        <strong>YouTube</strong>
-                        <small>Reviews and walkthroughs</small>
-                      </a>
-                      <a href="https://www.reddit.com/" target="_blank" rel="noreferrer">
-                        <span>R</span>
-                        <strong>Reddit</strong>
-                        <small>Research threads and advice</small>
-                      </a>
-                    </div>
-                  </section>
+                  <div class="screen-content">
+                    <section class="screen-panel active" id="home-panel">
+                      <h1>Kisephson</h1>
+                      <div class="home-actions">
+                        <button class="module-card" type="button" data-panel="tools-panel">
+                          Tools
+                        </button>
+                        <button class="module-card" type="button" data-panel="links-panel">
+                          Links
+                        </button>
+                      </div>
+                    </section>
 
-                  <section class="screen-panel" id="tools-panel">
-                    <p class="eyebrow">Calculator loaded</p>
-                    <h2>Car Deal Calculator</h2>
-                    <div class="calculator">
-                      <form class="calc-panel" id="car-form">
-                        <label>
-                          Vehicle price
-                          <input id="price" type="number" min="0" value="35000" />
-                        </label>
-                        <label>
-                          Discount
-                          <input id="discount" type="number" min="0" value="2500" />
-                        </label>
-                        <label>
-                          Trade-in
-                          <input id="trade" type="number" min="0" value="5000" />
-                        </label>
-                        <label>
-                          Down payment
-                          <input id="down" type="number" min="0" value="3000" />
-                        </label>
-                        <label>
-                          Tax rate
-                          <div class="input-suffix">
-                            <input id="tax" type="number" min="0" step="0.01" value="6.625" />
-                            <span>%</span>
-                          </div>
-                        </label>
-                        <label>
-                          Fees
-                          <input id="fees" type="number" min="0" value="899" />
-                        </label>
-                        <label>
-                          APR
-                          <div class="input-suffix">
-                            <input id="apr" type="number" min="0" step="0.01" value="6.49" />
-                            <span>%</span>
-                          </div>
-                        </label>
-                        <label>
-                          Term
-                          <div class="input-suffix">
-                            <input id="term" type="number" min="1" value="60" />
-                            <span>mo</span>
-                          </div>
-                        </label>
-                      </form>
+                    <section class="screen-panel" id="links-panel">
+                      <p class="eyebrow">Quick access</p>
+                      <h2>Favorite Websites</h2>
+                      <div class="link-grid">
+                        <a href="https://www.autotrader.com/" target="_blank" rel="noreferrer">
+                          <span>A</span>
+                          <strong>AutoTrader</strong>
+                          <small>Car searches and market checks</small>
+                        </a>
+                        <a href="https://www.cargurus.com/" target="_blank" rel="noreferrer">
+                          <span>C</span>
+                          <strong>CarGurus</strong>
+                          <small>Deal ratings and listings</small>
+                        </a>
+                        <a href="https://www.youtube.com/" target="_blank" rel="noreferrer">
+                          <span>Y</span>
+                          <strong>YouTube</strong>
+                          <small>Reviews and walkthroughs</small>
+                        </a>
+                        <a href="https://www.reddit.com/" target="_blank" rel="noreferrer">
+                          <span>R</span>
+                          <strong>Reddit</strong>
+                          <small>Research threads and advice</small>
+                        </a>
+                      </div>
+                    </section>
 
-                      <aside class="result-panel" aria-live="polite">
-                        <span>Monthly</span>
-                        <div class="monthly" id="monthly">$0</div>
-                        <p id="deal-copy">Enter your numbers to score the deal.</p>
-                        <dl>
-                          <div>
-                            <dt>Out-the-door</dt>
-                            <dd id="otd">$0</dd>
-                          </div>
-                          <div>
-                            <dt>Financed</dt>
-                            <dd id="financed">$0</dd>
-                          </div>
-                          <div>
-                            <dt>Interest</dt>
-                            <dd id="interest">$0</dd>
-                          </div>
-                          <div>
-                            <dt>Score</dt>
-                            <dd id="score">0%</dd>
-                          </div>
-                        </dl>
-                        <div class="deal-meter">
-                          <div id="deal-meter-fill"></div>
-                        </div>
-                      </aside>
-                    </div>
-                  </section>
+                    <section class="screen-panel" id="tools-panel">
+                      <p class="eyebrow">Calculator loaded</p>
+                      <h2>Car Deal Calculator</h2>
+                      <div class="calculator">
+                        <form class="calc-panel" id="car-form">
+                          <label>
+                            Vehicle price
+                            <input id="price" type="number" min="0" value="35000" />
+                          </label>
+                          <label>
+                            Discount
+                            <input id="discount" type="number" min="0" value="2500" />
+                          </label>
+                          <label>
+                            Trade-in
+                            <input id="trade" type="number" min="0" value="5000" />
+                          </label>
+                          <label>
+                            Down payment
+                            <input id="down" type="number" min="0" value="3000" />
+                          </label>
+                          <label>
+                            Tax rate
+                            <div class="input-suffix">
+                              <input id="tax" type="number" min="0" step="0.01" value="6.625" />
+                              <span>%</span>
+                            </div>
+                          </label>
+                          <label>
+                            Fees
+                            <input id="fees" type="number" min="0" value="899" />
+                          </label>
+                          <label>
+                            APR
+                            <div class="input-suffix">
+                              <input id="apr" type="number" min="0" step="0.01" value="6.49" />
+                              <span>%</span>
+                            </div>
+                          </label>
+                          <label>
+                            Term
+                            <div class="input-suffix">
+                              <input id="term" type="number" min="1" value="60" />
+                              <span>mo</span>
+                            </div>
+                          </label>
+                        </form>
 
-                  <section class="screen-panel" id="vault-panel">
-                    <p class="eyebrow">Local storage</p>
-                    <h2>Collections</h2>
-                    <div class="collection-grid">
-                      <article>
-                        <span>Recipes</span>
-                        <strong>Fast dinners, sauces, meal prep ideas.</strong>
-                      </article>
-                      <article>
-                        <span>Notes</span>
-                        <strong>Useful things worth keeping close.</strong>
-                      </article>
-                      <article>
-                        <span>Garage</span>
-                        <strong>Cars to compare, mods, maintenance, dream builds.</strong>
-                      </article>
-                    </div>
-                  </section>
+                        <aside class="result-panel" aria-live="polite">
+                          <span>Monthly</span>
+                          <div class="monthly" id="monthly">$0</div>
+                          <p id="deal-copy">Enter your numbers to score the deal.</p>
+                          <dl>
+                            <div>
+                              <dt>Out-the-door</dt>
+                              <dd id="otd">$0</dd>
+                            </div>
+                            <div>
+                              <dt>Financed</dt>
+                              <dd id="financed">$0</dd>
+                            </div>
+                            <div>
+                              <dt>Interest</dt>
+                              <dd id="interest">$0</dd>
+                            </div>
+                            <div>
+                              <dt>Score</dt>
+                              <dd id="score">0%</dd>
+                            </div>
+                          </dl>
+                          <div class="deal-meter">
+                            <div id="deal-meter-fill"></div>
+                          </div>
+                        </aside>
+                      </div>
+                    </section>
+
+                    <section class="screen-panel" id="vault-panel">
+                      <p class="eyebrow">Local storage</p>
+                      <h2>Collections</h2>
+                      <div class="collection-grid">
+                        <article>
+                          <span>Recipes</span>
+                          <strong>Fast dinners, sauces, meal prep ideas.</strong>
+                        </article>
+                        <article>
+                          <span>Notes</span>
+                          <strong>Useful things worth keeping close.</strong>
+                        </article>
+                        <article>
+                          <span>Garage</span>
+                          <strong>Cars to compare, mods, maintenance, dream builds.</strong>
+                        </article>
+                      </div>
+                    </section>
+                  </div>
                 </div>
               </div>
             </div>
